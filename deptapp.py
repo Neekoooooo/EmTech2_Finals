@@ -10,7 +10,7 @@ Original file is located at
 import streamlit as st
 import tensorflow as tf
 
-@st.cache
+@st.cache(allow_output_mutation = True)
 
 def load_model():
   model=tf.keras.models.load_model('model_weather.h5')
