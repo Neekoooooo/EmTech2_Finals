@@ -44,5 +44,5 @@ else:
     st.image(image,use_column_width=True)
     prediction=import_and_predict(image,model)
     class_names= types
-    string="The model predicted: " + class_names[np.argmax(prediction)] + " ;  " + message[np.argmax(prediction)]
+    string="The model predicted: " + class_names[np.argmax(prediction)] + " ; Message of the day:  " + message[np.argmax(prediction)]
     st.success(string)
