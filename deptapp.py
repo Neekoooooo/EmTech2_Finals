@@ -21,9 +21,10 @@ model=load_model()
 types = {0: 'Cloudy', 1: 'Rain', 2: 'Shine', 3: 'Sunrise'}
 message = {0: "What a Cloudy day we have here, am I right?", 1: "Rainy day ahead! Ready your raincoats!", 2: "What a beautiful day we have here today!", 3: "Rise and Shine!"}
 st.write("""
-# Multi-Weather Classification Deep Learning Model by Nhyko"""
+# Multi-Weather Classification Deep Learning Model"""
 )
 st.text("The Multi-Weather Classification Deep Learning Model from the Midterm Exam was used")
+st.text("Nhyko - CPE32S6 - CPE019: Final Deployment Project")
 file=st.file_uploader("Take a picture of the sky above and upload it here! Do note that only jpg and png files are accepted. Thank you!",type=["jpg","png"])
 
 
