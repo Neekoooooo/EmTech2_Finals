@@ -20,7 +20,7 @@ def load_model():
 model=load_model()
 
 types = {0: 'Cloudy', 1: 'Rain', 2: 'Shine', 3: 'Sunrise'}
-
+message = ["What a Cloudy day we have here, am I right?", "Rainy day ahead! Ready your raincoats!", "What a beautiful day we have here today!", "Rise and Shine!"]
 st.write("""
 # Multi-Weather Classification Deep Learning Model"""
 )
@@ -45,5 +45,5 @@ else:
     st.image(image,use_column_width=True)
     prediction=import_and_predict(image,model)
     class_names= types
-    string="OUTPUT : "+class_names[np.argmax(prediction)]
+    string="The model predicted: " + class_names[np.argmax(predictions)] + "; " + message[np.argmax(predictions]
     st.success(string)
