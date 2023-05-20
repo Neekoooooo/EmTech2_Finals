@@ -10,8 +10,7 @@ Original file is located at
 import streamlit as st
 import tensorflow as tf
 
-@st.cache(allow_output_mutation=True)
-
+@st.cache
 
 def load_model():
   model=tf.keras.models.load_model('model_weather.h5')
@@ -20,7 +19,7 @@ def load_model():
 model=load_model()
 
 types = {0: 'Cloudy', 1: 'Rain', 2: 'Shine', 3: 'Sunrise'}
-message = ["What a Cloudy day we have here, am I right?", "Rainy day ahead! Ready your raincoats!", "What a beautiful day we have here today!", "Rise and Shine!"]
+message = {0: "What a Cloudy day we have here, am I right?", 1: "Rainy day ahead! Ready your raincoats!", 2: "What a beautiful day we have here today!", 3: "Rise and Shine!"}
 st.write("""
 # Multi-Weather Classification Deep Learning Model"""
 )
@@ -45,5 +44,5 @@ else:
     st.image(image,use_column_width=True)
     prediction=import_and_predict(image,model)
     class_names= types
-    string="The model predicted: " + class_names[np.argmax(predictions)] + "; " + message[np.argmax(predictions]
+    string="The model predicted: " + class_names[np.argmax(predictions)] + "; " + message[np.argmax(predictions])
     st.success(string)
