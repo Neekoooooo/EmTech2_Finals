@@ -12,12 +12,14 @@ import tensorflow as tf
 
 @st.cache(allow_output_mutation=True)
 
-types = {0: 'Cloudy', 1: 'Rain', 2: 'Shine', 3: 'Sunrise'}
 
 def load_model():
   model=tf.keras.models.load_model('model_weather.h5')
   return model
+
 model=load_model()
+
+types = {0: 'Cloudy', 1: 'Rain', 2: 'Shine', 3: 'Sunrise'}
 
 st.write("""
 # Multi-Weather Classification Deep Learning Model"""
