@@ -46,7 +46,7 @@ else:
     class_names= types
     string1 = "Please note that the model is not 100 percent accurate"
     string2="The model predicted: " + class_names[np.argmax(prediction)] 
-    string3 ="Message of the day: " + message[np.argmax(prediction)]
+    string3 = message[np.argmax(prediction)]
     st.success(string1)
     st.success(string2)
     st.success(string3)
